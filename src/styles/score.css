@@ -1,0 +1,16 @@
+.score {
+  width: 225px;
+  border-radius: 25px;
+  padding: 15px;
+  background-color: rgb(83, 191, 83);
+  box-shadow: 1px 1px 3px 1px;
+}
+
+.score > p {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.score > p:first-child {
+  margin-bottom: 10px;
+}
