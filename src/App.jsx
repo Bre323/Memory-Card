@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 import Board from './components/board'
 import Logo from './components/logo'
@@ -8,6 +9,9 @@ let list = await getPokemonList();
 console.log(list);
 
 function App() {
+  let [personalRecord, setPersonalRecord] = useState(0);
+  let [score, setScore] = useState(0);
+
   const shufflePokemons = () => {
     const shuffledList = [...list];
     let currentIndex = shuffledList.length;
@@ -29,7 +33,7 @@ function App() {
   return (
     <div className="wrapper">
       <Logo />
-      <Score />
+      <Score score={score} personalRecord={personalRecord} />
       <Board pokemonList={list} shufflePokemons={shufflePokemons}/>
     </div>
   )

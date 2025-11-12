@@ -1,10 +1,10 @@
 import '../styles/score.css';
 
-function Score() {
+function Score({ score, personalRecord }) {
   return (
     <div className="score">
-      <p>Personal Record: 0</p>
-      <p>Score: 0</p>
+      <p>Personal Record: {personalRecord}</p>
+      <p>Score: {score}</p>
     </div>
   )
 }
