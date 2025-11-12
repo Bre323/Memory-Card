@@ -10,10 +10,9 @@ console.log(list);
 function App() {
   return (
     <div className="wrapper">
-      <img src={list[2].img} alt={list[2].name} />
       <Logo />
       <Score />
-      <Board />
+      <Board pokemonList={list}/>
     </div>
   )
 }

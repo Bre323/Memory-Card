@@ -1,23 +1,15 @@
 import '../styles/board.css';
 
-function Board() {
+function Board({ pokemonList }) {
+  const listItems = pokemonList.map(pokemon => 
+    <div className="img" key={pokemon.name}>
+      <img src={pokemon.img} alt={pokemon.name} />
+    </div>
+  );
+
   return (
     <div className="board">
-      <div className="img"></div>
-      <div className="img"></div>
-      <div className="img"></div>
-      <div className="img"></div>
-      <div className="img"></div>
-      <div className="img"></div>
-      <div className="img"></div>
-      <div className="img"></div>
-      <div className="img"></div>
-      <div className="img"></div>
-      <div className="img"></div>
-      <div className="img"></div>
-      <div className="img"></div>
-      <div className="img"></div>
-      <div className="img"></div>
+      {listItems}
     </div>
   )
 }
