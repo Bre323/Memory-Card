@@ -8,11 +8,29 @@ let list = await getPokemonList();
 console.log(list);
 
 function App() {
+  const shufflePokemons = () => {
+    const shuffledList = [...list];
+    let currentIndex = shuffledList.length;
+    let randomIndex;
+
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      [shuffledList[currentIndex], shuffledList[randomIndex]] = [
+        shuffledList[randomIndex], shuffledList[currentIndex]
+      ];
+    }
+
+    console.log(shuffledList);
+    return shuffledList;
+  }
+
   return (
     <div className="wrapper">
       <Logo />
       <Score />
-      <Board pokemonList={list}/>
+      <Board pokemonList={list} shufflePokemons={shufflePokemons}/>
     </div>
   )
 }
