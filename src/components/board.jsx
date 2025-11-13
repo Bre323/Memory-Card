@@ -1,8 +1,8 @@
 import '../styles/board.css';
 
-function Board({ pokemonList, shufflePokemons }) {
+function Board({ pokemonList, choosePokemon }) {
   const listItems = pokemonList.map(pokemon => 
-    <div className="img" key={pokemon.name} onClick={shufflePokemons}>
+    <div className="img" key={pokemon.name} onClick={choosePokemon}>
       <img src={pokemon.img} alt={pokemon.name} />
     </div>
   );

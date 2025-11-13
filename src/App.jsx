@@ -11,6 +11,7 @@ console.log(list);
 function App() {
   let [personalRecord, setPersonalRecord] = useState(0);
   let [score, setScore] = useState(0);
+  let [pokemons, setPokemons] = useState(list);
 
   const shufflePokemons = () => {
     const shuffledList = [...list];
@@ -30,11 +31,17 @@ function App() {
     return shuffledList;
   }
 
+  const choosePokemon = () => {
+    list = shufflePokemons();
+    setPokemons(list);
+    setScore(prevScore => prevScore + 1);
+  }
+
   return (
     <div className="wrapper">
       <Logo />
       <Score score={score} personalRecord={personalRecord} />
-      <Board pokemonList={list} shufflePokemons={shufflePokemons}/>
+      <Board pokemonList={pokemons} choosePokemon={choosePokemon}/>
     </div>
   )
 }
