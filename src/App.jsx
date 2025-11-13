@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Board from './components/board'
 import Logo from './components/logo'
@@ -6,12 +6,15 @@ import Score from './components/score'
 import getPokemonList from './usePokemons'
 
 let list = await getPokemonList();
-console.log(list);
 
 function App() {
   let [personalRecord, setPersonalRecord] = useState(0);
   let [score, setScore] = useState(0);
   let [pokemons, setPokemons] = useState(list);
+
+  useEffect(() => {
+    list = shufflePokemons();
+  }, [score]);
 
   const shufflePokemons = () => {
     const shuffledList = [...list];
@@ -27,12 +30,10 @@ function App() {
       ];
     }
 
-    console.log(shuffledList);
     return shuffledList;
   }
 
   const choosePokemon = () => {
-    list = shufflePokemons();
     setPokemons(list);
     setScore(prevScore => prevScore + 1);
   }
