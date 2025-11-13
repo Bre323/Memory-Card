@@ -11,10 +11,13 @@ function App() {
   let [personalRecord, setPersonalRecord] = useState(0);
   let [score, setScore] = useState(0);
   let [pokemons, setPokemons] = useState(list);
+  let [addedNames, setAddedNames] = useState([]);
+
 
   useEffect(() => {
-    list = shufflePokemons();
+    setPokemons(shufflePokemons());
   }, [score]);
+
 
   const shufflePokemons = () => {
     const shuffledList = [...list];
@@ -33,10 +36,28 @@ function App() {
     return shuffledList;
   }
 
-  const choosePokemon = () => {
-    setPokemons(list);
-    setScore(prevScore => prevScore + 1);
+  const openModal = () => {
+    console.log("IT'S OVER");
   }
+
+  const choosePokemon = (choice) => {
+    let names = [...addedNames];
+
+    if(names.includes(choice)) {
+      if(score > personalRecord) {
+        setPersonalRecord(score);
+      }
+      openModal();
+      setScore(0);
+      setAddedNames([]);
+    }
+    else {
+      setPokemons(list);
+      setScore(prevScore => prevScore + 1);
+      setAddedNames([...addedNames, choice]);
+    }
+  }
+
 
   return (
     <div className="wrapper">
