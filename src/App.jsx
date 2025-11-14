@@ -3,6 +3,7 @@ import './App.css'
 import Board from './components/board'
 import Logo from './components/logo'
 import Score from './components/score'
+import Modal from './components/modal'
 import getPokemonList from './usePokemons'
 
 let list = await getPokemonList();
@@ -12,6 +13,7 @@ function App() {
   let [score, setScore] = useState(0);
   let [pokemons, setPokemons] = useState(list);
   let [addedNames, setAddedNames] = useState([]);
+  let [modalIsOpen, setModalIsOpen] = useState(false);
 
 
   useEffect(() => {
@@ -64,6 +66,12 @@ function App() {
       <Logo />
       <Score score={score} personalRecord={personalRecord} />
       <Board pokemonList={pokemons} choosePokemon={choosePokemon}/>
+      <Modal isOpen={modalIsOpen}>
+        <h1>IT'S OVER</h1>
+        <p>Personal Record: {personalRecord}</p>
+        <p>Score: {score}</p>
+        <button>Play Again</button>
+      </Modal>
     </div>
   )
 }
