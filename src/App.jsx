@@ -39,7 +39,11 @@ function App() {
   }
 
   const openModal = () => {
-    console.log("IT'S OVER");
+    setModalIsOpen(true);
+  }
+
+  const closeModal = () => {
+    setModalIsOpen(false);
   }
 
   const choosePokemon = (choice) => {
@@ -70,7 +74,7 @@ function App() {
         <h1>IT'S OVER</h1>
         <p>Personal Record: {personalRecord}</p>
         <p>Score: {score}</p>
-        <button>Play Again</button>
+        <button onClick={closeModal}>Play Again</button>
       </Modal>
     </div>
   )
