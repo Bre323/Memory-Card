@@ -1,0 +1,52 @@
+#overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(98, 206, 98);
+}
+
+#modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(83, 191, 83);
+  height: 300px;
+  width: 300px;
+  padding: 20px;
+  border-radius: 25px;
+}
+
+#modal > h1 {
+  margin-bottom: 20px;
+}
+
+#modal > p {
+  font-size: 33px;
+}
+
+#modal > button {
+  margin-top: 20px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  height: 50px;
+  width: 125px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#modal > button:hover {
+  background-color: #bbbbbb;
+}
+
+#modal > button:active {
+  transform: scale(0.9);
+}
