@@ -1,8 +1,18 @@
 body {
   background-color: rgb(98, 206, 98);
   color: black;
+  min-width: 800px;
 }
 
 #root {
+  padding: 25px;
+}
+
+.gameboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px auto;
+  background-color: rgb(70, 178, 70);
   padding: 25px;
 }

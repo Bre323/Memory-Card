@@ -68,8 +68,10 @@ function App() {
   return (
     <div className="wrapper">
       <Logo />
-      <Score score={score} personalRecord={personalRecord} />
-      <Board pokemonList={pokemons} choosePokemon={choosePokemon}/>
+      <div className="gameboard">
+        <Score score={score} personalRecord={personalRecord} />
+        <Board pokemonList={pokemons} choosePokemon={choosePokemon}/>
+      </div>
       <Modal isOpen={modalIsOpen}>
         <h1>IT'S OVER</h1>
         <p>Personal Record: {personalRecord}</p>

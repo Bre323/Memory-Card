@@ -8,6 +8,7 @@ function Board({ pokemonList, choosePokemon }) {
       onClick={() => choosePokemon(pokemon.name)}
     >
       <img src={pokemon.img} alt={pokemon.name} />
+      <p>{pokemon.name}</p>
     </div>
   );
 

@@ -17,5 +17,20 @@
 }
 
 .board > .img {
-  background-color: aquamarine;
+  background-color: rgb(70, 178, 70)
+}
+
+.img {
+  text-align: center;
+  transition: 0.3s;
+}
+
+.img > p {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.img:hover {
+  background-color: rgb(50, 100, 50);
+  color: #dddddd;
 }
