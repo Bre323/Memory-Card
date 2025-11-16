@@ -1,3 +1,10 @@
+# Memory Card
+ - It is a memory card game, where you need to click on the card without repeting the cards you clicked!
+ - Developed with React and Vite.
+
+## Project Preview
+![preview screenshot](./src/assets/memory-game-preview.png)
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
