@@ -1,9 +1,13 @@
 # Memory Card
  - It is a memory card game, where you need to click on the card without repeting the cards you clicked!
- - Developed with React and Vite.
 
 ## Project Preview
 ![preview screenshot](./src/assets/memory-game-preview.png)
+
+## Tecnology
+Here are the technologies used in this project.
+ * React JS
+ * Vite
 
 # React + Vite
 
