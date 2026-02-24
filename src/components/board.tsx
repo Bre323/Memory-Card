@@ -1,5 +1,10 @@
+interface pokemon {
+  name: string;
+  img: string;
+}
+
 interface BoardProps {
-  pokemonList: Array<object>;
+  pokemonList: Array<pokemon>;
   choosePokemon: (choice: string) => void;
 }
 
