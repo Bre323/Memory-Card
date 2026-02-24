@@ -3,6 +3,7 @@ import './App.css'
 import Logo from './components/logo'
 import Board from './components/board'
 import Score from './components/score'
+import Modal from './components/modal'
 import getPokemonList from './usePokemons'
 
 let list = await getPokemonList();
@@ -12,6 +13,7 @@ function App() {
   let [score, setScore] = useState(0);
   let [pokemons, setPokemons] = useState(list);
   let [addedNames, setAddedNames] = useState<string[]>([]);
+  let [modalIsOpen, setModalIsOpen] = useState(false);
 
   useEffect(() => {
     setPokemons(shufflePokemons());
@@ -34,6 +36,14 @@ function App() {
     return shuffledlist;
   }
 
+  const openModal = () => {
+    setModalIsOpen(true);
+  }
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  }
+
   const choosePokemon = (choice: string) => {
     let names = [...addedNames];
 
@@ -41,6 +51,7 @@ function App() {
       if (score > personalRecord) {
         setPersonalRecord(score);
       }
+      openModal();
       setScore(0);
       setAddedNames([]);
     }
@@ -58,6 +69,12 @@ function App() {
         <Score score={score} personalRecord={personalRecord} />
         <Board pokemonList={pokemons} choosePokemon={choosePokemon} />
       </div>
+      <Modal isOpen={modalIsOpen}>
+        <h1>IT'S OVER</h1>
+        <p>Personal Record: {personalRecord}</p>
+        <p>Score: {score}</p>
+        <button onClick={closeModal}>Play Again</button>
+      </Modal>
     </div>
   )
 }
