@@ -65,7 +65,7 @@ function App() {
   return (
     <div>
       <Logo />
-      <div className='gameboard'>
+      <div className='flex flex-col items-center my-[100px] mx-auto p-6 bg-green-700'>
         <Score score={score} personalRecord={personalRecord} />
         <Board pokemonList={pokemons} choosePokemon={choosePokemon} />
       </div>
