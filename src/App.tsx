@@ -70,10 +70,10 @@ function App() {
         <Board pokemonList={pokemons} choosePokemon={choosePokemon} />
       </div>
       <Modal isOpen={modalIsOpen}>
-        <h1>IT'S OVER</h1>
-        <p>Personal Record: {personalRecord}</p>
-        <p>Score: {score}</p>
-        <button onClick={closeModal}>Play Again</button>
+        <h1 className='mb-[20px] font-bold text-[40px]'>IT'S OVER</h1>
+        <p className='text-[33px]'>Personal Record: {personalRecord}</p>
+        <p className='text-[33px]'>Score: {score}</p>
+        <button className='h-[50px] w-[125px] mt-[20px] rounded-lg bg-green-700 font-bold text-[1.2rem] cursor-pointer transition-[0.3s] hover:bg-slate-300 active:scale-90' onClick={closeModal}>Play Again</button>
       </Modal>
     </div>
   )
