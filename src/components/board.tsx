@@ -11,17 +11,17 @@ interface BoardProps {
 function Board({ pokemonList, choosePokemon }: BoardProps) {
   const listItems = pokemonList.map(pokemon => 
     <div
-      className="flex flex-col items-center rounded-xl transition-[0.3s] bg-green-400 hover:bg-emerald-800 hover:text-slate-300"
+      className="flex flex-col items-center rounded-xl bg-background hover:bg-itemHover hover:text-itemText transition-[0.3s]"
       key={pokemon.name}
       onClick={() => choosePokemon(pokemon.name)}
     >
       <img src={pokemon.img} alt={pokemon.name} />
-      <p className="text-lg font-bold">{pokemon.name}</p>
+      <p className="text-[1.1rem] font-bold">{pokemon.name}</p>
     </div>
   );
 
   return (
-    <div className="h-[500px] w-[90%] my-0 mx-auto mt-[100px] p-6 bg-green-600 grid grid-cols-5 grid-rows-3 flex-wrap gap-[25px]">
+    <div className="grid grid-rows-3 grid-cols-5 gap-[25px] flex-wrap h-[500px] w-[90%] my-0 mx-auto p-[25px] mt-[100px] bg-results rounded-xl">
       {listItems}
     </div>
   )

@@ -11,8 +11,8 @@ function Modal({ children, isOpen }: ModalProps) {
   }
   else {
     return (
-      <div className="flex justify-center items-center absolute top-0 left-0 z-index-1 h-[100vh] w-[100vw] bg-green-700 opacity-95">
-        <div className="flex flex-col justify-center items-center bg-green-600 h-90 w-90 p-5 rounded-lg">
+      <div className="flex justify-center items-center absolute top-0 left-0 z-index-1 h-[100vh] w-[100vw] bg-background opacity-95">
+        <div className="flex flex-col justify-center items-center bg-results h-[300px] w-[300px] p-[20px] rounded-xl">
           { children }
         </div>
       </div>

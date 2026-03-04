@@ -65,15 +65,15 @@ function App() {
   return (
     <div>
       <Logo />
-      <div className='flex flex-col items-center my-[100px] mx-auto p-6 bg-green-700'>
+      <div className='flex flex-col items-center my-[100px] mx-auto bg-gameboard p-[25px]'>
         <Score score={score} personalRecord={personalRecord} />
         <Board pokemonList={pokemons} choosePokemon={choosePokemon} />
       </div>
       <Modal isOpen={modalIsOpen}>
-        <h1 className='mb-[20px] font-bold text-[40px]'>IT'S OVER</h1>
-        <p className='text-[33px]'>Personal Record: {personalRecord}</p>
-        <p className='text-[33px]'>Score: {score}</p>
-        <button className='h-[50px] w-[125px] mt-[20px] rounded-lg bg-green-700 font-bold text-[1.2rem] cursor-pointer transition-[0.3s] hover:bg-slate-300 active:scale-90' onClick={closeModal}>Play Again</button>
+        <h1 className='mb-[20px]'>IT'S OVER</h1>
+        <p className='text-[25px]'>Personal Record: {personalRecord}</p>
+        <p className='text-[25px]'>Score: {score}</p>
+        <button className='mt-[20px] rounded-lg font-bold text-[1.2rem] h-[50px] w-[125px] cursor-pointer transition-[0.3s] active:scale-90' onClick={closeModal}>Play Again</button>
       </Modal>
     </div>
   )
